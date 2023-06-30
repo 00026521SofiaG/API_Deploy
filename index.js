@@ -1,8 +1,13 @@
-import  express  from 'express'
+const express = require('express');
+const app = express();
+const port = 3001;
+
+app.get('/api/hola', (req, res) => {
+  res.send('¡Hola, mundo! by Luis Maltez');
+});
+
+app.listen(port, () => {
+  console.log(`La API está escuchando en http://localhost:${port}`);
+});
 
 
-const app = express()
-
-app.listen(3001, ()=> console.log('API running on port 3001'))
-
-app.get('/api/texto', (req,res)=> res.json('This is a deployed API'))
